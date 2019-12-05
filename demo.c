@@ -1,18 +1,62 @@
+#include <ncurses.h>     // ncurses library
+/* Internal function declarations   */
 
-#include <ncurses.h>
-#include <curses.h>
-#include <unistd.h>
+int  rock ();           
+int paper();
+int scissors();
+int reload();
 
-int main(int argc, char *argv[]) {
+/* main function */
 
- initscr();
- noecho();
- curs_set(FALSE);
+int main(void) {
+  initscr();
+  noecho();
+  curs_set(FALSE);
  
- mvprintw(0,0,"Hello, world!");
- refresh();
+  rock();
+  reload();
 
- sleep(1);
+  paper();
+  reload();
 
- endwin(); // Restore normal terminal behavior
+  scissors();
+  reload();
+
+  endwin();
+  return 0;
+} 
+
+/* internal functions  */
+int reload()
+{	
+refresh();
+  getch();
 }
+
+int  rock (){
+  mvaddstr(10, 33, "    ***      ");
+  mvaddstr(10, 33, "   *****     ");
+  mvaddstr(11, 33, "   ******    ");
+  mvaddstr(12, 33, "   *****     ");
+  mvaddstr(13, 33, "    ***      ");
+  mvaddstr(13, 33, "     *        ");
+} 
+
+int paper(){
+  mvaddstr(10, 33, "    ******   ");
+  mvaddstr(10, 33, "   ******    ");
+  mvaddstr(11, 33, "  ******     ");
+  mvaddstr(12, 33, " ******      ");
+  mvaddstr(13, 33, " *****       ");
+  mvaddstr(13, 33, " ****        ");
+}
+
+int scissors(){
+  mvaddstr(10, 33, "  **    **   ");
+  mvaddstr(10, 33, "   **  **    ");
+  mvaddstr(11, 33, "    ****     ");
+  mvaddstr(12, 33, "    ***      ");
+  mvaddstr(13, 33, "  **   **    ");
+  mvaddstr(13, 33, "  **   **    ");
+}
+ 
