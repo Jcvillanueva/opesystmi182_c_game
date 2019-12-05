@@ -34,12 +34,12 @@ refresh();
 }
 
 int  rock (){
-  mvaddstr(10, 33, "    ***      ");
-  mvaddstr(10, 33, "   *****     ");
-  mvaddstr(11, 33, "   ******    ");
-  mvaddstr(12, 33, "   *****     ");
-  mvaddstr(13, 33, "    ***      ");
-  mvaddstr(13, 33, "     *        ");
+  mvaddstr(10, 33, "   *******     ");
+  mvaddstr(10, 33, "  *********    ");
+  mvaddstr(11, 33, "  *********    ");
+  mvaddstr(12, 33, "   *******     ");
+  mvaddstr(13, 33, "    *****      ");
+  mvaddstr(13, 33, "     ***        ");
 } 
 
 int paper(){
