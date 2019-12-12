@@ -1,4 +1,5 @@
-#include <ncurses.h>     // ncurses library
+#include <ncurses.h>
+     // ncurses library
 /* Internal function declarations   */
 
 int  rock ();           
@@ -55,7 +56,7 @@ int scissors(){
   mvaddstr(10, 33, "  **    **   ");
   mvaddstr(10, 33, "   **  **    ");
   mvaddstr(11, 33, "    ****     ");
-  mvaddstr(12, 33, "    ***      ");
+  mvaddstr(12, 33, "   *****      ");
   mvaddstr(13, 33, "  **   **    ");
   mvaddstr(13, 33, "  **   **    ");
 }
