@@ -14,63 +14,131 @@ int main() {
 	curs_set(FALSE);
 
 int i;
-int Pscore =0;
-int Cscore =0;
+int P1score =0;
+int P2score =0;
 
-int choice;
+int choiceP1;
+int choiceP2
 	srand(time(NULL));
 	printf("Rock=1 , Paper= 2, and Scissors= 3\n");
 
-	for(i=0;i<5;i++){
-		printf("Enter your choice:");
-			scanf("%d",&choice);
-			int computer=rand()%3+1;
-	if(choice==1){
-		if(computer==1){
-			printf("Draw\n");
-		}
-	if(computer==2){
-		printf("Computer Wins!\n");
-		Cscore= Cscore + 1;
-		}
-	if(computer==3){
-		printf("Player Wins\n");
-		Pscore = Pscore + 1;
-		}
-	}
+	printf("Enter your choice P1:");
+		scanf("%d",&choiceP1);
+	printf("Enter you Choice P2:")
+		scanf("%d",&choiceP2)
 
-	else  if(choice==2){
-		if(computer==2){
-			printf("Draw\n");
-			}
-		if(computer==3){
-			printf("Player Wins!\n");
-			Pscore = Pscore + 1;
-			}
-		if(computer==1){
-			printf("Computer Wins!\n");
-			Cscore= Cscore + 1;
-			}
-		}
-		else if(choice==3){
-			if(computer==3){
-			printf("Draw\n");
-			}
-		if(computer==2){
-			printf("Computer Wins!\n");
-			Cscore= Cscore + 1;
-			}
-		if(computer==1){
-			printf("Player Wins!\n");
-			Pscore = Pscore + 1;
+	if(choiceP1==1)&&(choiceP2==1) { 
+	choiceP1=mvprintw(10, 33, "    ***      ");
+                 mvprintw(10, 33, "   *****     ");
+                 mvprintw(11, 33, "   ******    ");
+                 mvprintw(12, 33, "   *****     ");
+                 mvprintw(13, 33, "    ***      ");
+                 mvprintw(13, 33, "     *        ");
 
-			}
+	choiceP2=mvprintw(10, 33, "    ***      ");
+                 mvprintw(10, 33, "   *****     ");
+                 mvprintw(11, 33, "   ******    ");
+                 mvprintw(12, 33, "   *****     ");
+                 mvprintw(13, 33, "    ***      ");
+                 mvprintw(13, 33, "     *        ");
+
+		printf("Draw\n");
+
+	else if(choiceP1==2)&& (choiceP2==1){
+	choiceP1=mvaddstr(10, 33, "    ******   ");
+ 		 mvaddstr(10, 33, "   ******    ");
+ 		 mvaddstr(11, 33, "   *****     ");
+ 		 mvaddstr(12, 33, "  *****      ");
+ 		 mvaddstr(13, 33, " *****       ");
+ 		 mvaddstr(13, 33, " ****        ");
+
+	choiceP2=mvprintw(10, 33, "    ***      ");
+                 mvprintw(10, 33, "   *****     ");
+                 mvprintw(11, 33, "   ******    ");
+                 mvprintw(12, 33, "   *****     ");
+                 mvprintw(13, 33, "    ***      ");
+                 mvprintw(13, 33, "     *        ");
+ 
+		printf("Player 1 Wins\n");
+		P1score= P1score + 1;
 		}
+	else if(choiceP1==3)&&(choiceP2==1){
+	choiceP1=mvaddstr(10, 33, "  **    **   ");
+  		mvaddstr(10, 33, "   **  **    ");
+  		mvaddstr(11, 33, "    ****     ");
+  		mvaddstr(12, 33, "    ***      ");
+  		mvaddstr(13, 33, "  **   **    ");
+  		mvaddstr(13, 33, "  **   **    ");
+
+	choiceP2=mvaddstr(10, 33, "    ***      ");
+  		mvaddstr(10, 33, "   *****     ");
+  		mvaddstr(11, 33, "   ******    ");
+  		mvaddstr(12, 33, "   *****     ");
+  		mvaddstr(13, 33, "    ***      ");
+  		mvaddstr(13, 33, "     *        ");
+ 
+		printf("Player 2 Wins\n");
+		P2score = P2score + 1;
+		}
+
+	else if(choiceP1==1)&&(choiceP2==2){
+	choiceP1=mvaddstr(10, 33, "    ***      ");
+ 		mvaddstr(10, 33, "   *****     ");
+  		mvaddstr(11, 33, "   ******    ");
+ 		mvaddstr(12, 33, "   *****     ");
+		mvaddstr(13, 33, "    ***      ");
+ 		mvaddstr(13, 33, "     *        ");
+
+	choiceP2=mvaddstr(10, 33, "    ******   ");
+		mvaddstr(10, 33, "    ******    ");
+		mvaddstr(11, 33, "   ******     ");
+		mvaddstr(12, 33, "  ******      ");
+		mvaddstr(13, 33, " ******       ");
+		mvaddstr(13, 33, " *****        ");
+
+		printf("Player 2 Wins! \n");
+			}
+	else if(choiceP1==2)&&(choiceP2==2){
+	choiceP1=mvaddstr(10, 33, "    ******   ");
+		mvaddstr(10, 33, "    ******    ");
+		mvaddstr(11, 33, "   ******     ");
+		mvaddstr(12, 33, "  ******      ");
+		mvaddstr(13, 33, " ******       ");
+		mvaddstr(13, 33, " *****        ");
+
+	choiceP2=mvaddstr(10, 33, "    ******   ");
+		mvaddstr(10, 33, "    ******    ");
+		mvaddstr(11, 33, "   ******     ");
+		mvaddstr(12, 33, "  ******      ");
+		mvaddstr(13, 33, " ******       ");
+		mvaddstr(13, 33, " *****        ");
+
+		printf("Draw\n");
+			}
+	else if(choiceP1==3)&&(choiceP2==2){
+	choiceP1=mvaddstr(10, 33, "  **    **   ");
+		mvaddstr(10, 33, "   **  **    ");
+		mvaddstr(11, 33, "    ****     ");
+		mvaddstr(12, 33, "    ***      ");
+		mvaddstr(13, 33, "  **   **    ");
+		mvaddstr(13, 33, "  **   **    ");
+	choiceP2=mvaddstr(10, 33, "    ******   ");
+		mvaddstr(10, 33, "   ******    ");
+		mvaddstr(11, 33, "   *****     ");
+		mvaddstr(12, 33, "  *****      ");
+		mvaddstr(13, 33, " *****       ");
+		mvaddstr(13, 33, " ****        ");
+
+		printf("Player 1 Wins!\n");
+			}
+}		
+
 	else{
 		printf("Wrong Answer\n");
 		}
 
 		}
+
 	if(Cscore > Pscore ){
 		printf("Computer wins %d to %d\n",Cscore,Pscore);
 		}
@@ -86,38 +154,4 @@ int choice;
 }
 
 
-
-
-
-int reload() {	
-	refresh();
-  	getch();
-}
-
-int  rock(){
-  mvaddstr(10, 33, "    ***      ");
-  mvaddstr(10, 33, "   *****     ");
-  mvaddstr(11, 33, "   ******    ");
-  mvaddstr(12, 33, "   *****     ");
-  mvaddstr(13, 33, "    ***      ");
-  mvaddstr(13, 33, "     *        ");
-} 
-
-int paper(){
-  mvaddstr(10, 33, "    ******   ");
-  mvaddstr(10, 33, "   ******    ");
-  mvaddstr(11, 33, "   *****     ");
-  mvaddstr(12, 33, "  *****      ");
-  mvaddstr(13, 33, " *****       ");
-  mvaddstr(13, 33, " ****        ");
-}
-
-int scissors(){
-  mvaddstr(10, 33, "  **    **   ");
-  mvaddstr(10, 33, "   **  **    ");
-  mvaddstr(11, 33, "    ****     ");
-  mvaddstr(12, 33, "    ***      ");
-  mvaddstr(13, 33, "  **   **    ");
-  mvaddstr(13, 33, "  **   **    ");
-}
 
