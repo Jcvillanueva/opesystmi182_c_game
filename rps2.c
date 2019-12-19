@@ -23,9 +23,40 @@ int rockp2(){
 } 
 
 
-int paper();
+int paper1(){
+	mvaddstr(10, 13, "    ******   ");
+	mvaddstr(12, 13, "   ******    ");
+	mvaddstr(13, 13, "   *****     ");
+	mvaddstr(14, 13, "  *****      ");
+	mvaddstr(15, 13, " *****       ");
+	mvaddstr(16, 13, " ****        ");
+}
+int paper2(){
+	mvaddstr(10, 33, "    ******   ");
+        mvaddstr(12, 33, "   ******    ");
+        mvaddstr(13, 33, "   *****     ");
+        mvaddstr(14, 33, "  *****      ");
+        mvaddstr(15, 33, " *****       ");
+        mvaddstr(16, 33, " ****        ");
 
-int scissors();
+}
+
+int scissors1(){
+	mvaddstr(10, 13, "  **    **   ");
+	mvaddstr(11, 13, "   **  **    ");
+	mvaddstr(12, 13, "    ****     ");
+	mvaddstr(13, 13, "    ***      ");
+	mvaddstr(14, 13, "  **   **    ");
+	mvaddstr(15, 33, "  **   **    ");	
+}
+int scissors2(){
+	mvaddstr(10, 33, "  **    **   ");
+	mvaddstr(11, 33, "   **  **    ");
+	mvaddstr(12, 33, "    ****     ");
+	mvaddstr(13, 33, "    ***      ");
+	mvaddstr(14, 33, "  **   **    ");
+	mvaddstr(15, 33, "  **   **    ");
+}
 
 int reload()
 {	
@@ -45,12 +76,12 @@ int P2score =0;
 char choiceP1;
 char choiceP2;
 
-	mvaddstr(1,20,"ffRock=1 , Paper= 2, and Scissors= 3");
+	mvaddstr(1,20,"Rock=1 , Paper= 2, and Scissors= 3");
 
 	mvaddstr(2,20,"Enter your choice P1:");
 		refresh();
 		choiceP1=getch();
-	mvaddstr(3,20,"Enter you Choice P2:");
+	mvaddstr(3,20,"Enter your choice P2:");
 		refresh();
 		choiceP2=getch();
 
@@ -61,39 +92,55 @@ char choiceP2;
 		reload();
 	}
 
-	else if(choiceP1==2 && choiceP2==1){
-
-		printf("Player 1 Wins\n");
+	else if(choiceP1=='2' && choiceP2=='1'){
+		paper1();
+		rockp2();
+		mvaddstr(4,20,"Player 1 Wins!");
 		P1score= P1score + 1;
+		reload();
 		}
-	else if(choiceP1==3 && choiceP2==1){
-
-		printf("Player 2 Wins\n");
+	else if(choiceP1=='3' && choiceP2=='1'){
+		scissors1();
+		rockp2();
+		mvaddstr(4,20,"Player 2 Wins!");
 		P2score = P2score + 1;
+		reload();
 		}
 
-	else if(choiceP1==1 && choiceP2==2){
-		printf("Player 2 Wins! \n");
+	else if(choiceP1=='1' && choiceP2=='2'){
+		rockp1();
+		paper2();
+		mvaddstr(4,20,"Player 2 Win!")
 		P2score= P2score + 1;
+		reload();
 			}
-	else if(choiceP1==2 && choiceP2==2){
-		printf("Draw\n");
+	else if(choiceP1=='2' && choiceP2=='2'){
+		paper1();
+		paper2();
+		mvaddstr(4,20,"Draw");
 			}
-	else if(choiceP1==3 && choiceP2==2){
-		printf("Player 1 Wins!\n");
+	else if(choiceP1=='3' && choiceP2=='2'){
+		scissor1();
+		paper2();
+		mvaddstr(4,20,"Player 1 Wins!");
 		P1score= P1score + 1;
 			}
-	else if (choiceP1==1 && choiceP2==3){
-	printf("Player 1 Wins\n");
+	else if (choiceP1=='1' && choiceP2=='3'){
+		rockp1();
+		scissors2();
+		mvaddstr(4,20,"Player 1 Wins!");
 		P1score= P1score + 1;
 	}
 	else if (choiceP1==2 && choiceP2==3){
-		printf("Player 2 Wins\n");
+		paper1();
+		scissors2();
+		mvaddstr(4,20,"Player 2 Wins!");
 		P2score= P2score + 1;
 	}
-	else if (choiceP1==3 && choiceP2==3){
-
-		printf("Draw\n");
+	else if (choiceP1=='3' && choiceP2=='3'){
+		scissors1();
+		scissors2();
+		mvaddstr(4,20,"Draw");
 	}
 
 	else{
