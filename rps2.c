@@ -110,7 +110,7 @@ char choiceP2;
 	else if(choiceP1=='1' && choiceP2=='2'){
 		rockp1();
 		paper2();
-		mvaddstr(4,20,"Player 2 Win!")
+		mvaddstr(4,20,"Player 2 Win!");
 		P2score= P2score + 1;
 		reload();
 			}
@@ -118,20 +118,23 @@ char choiceP2;
 		paper1();
 		paper2();
 		mvaddstr(4,20,"Draw");
+		reload();
 			}
 	else if(choiceP1=='3' && choiceP2=='2'){
-		scissor1();
+		scissors1();
 		paper2();
 		mvaddstr(4,20,"Player 1 Wins!");
 		P1score= P1score + 1;
+		reload();
 			}
 	else if (choiceP1=='1' && choiceP2=='3'){
 		rockp1();
 		scissors2();
 		mvaddstr(4,20,"Player 1 Wins!");
 		P1score= P1score + 1;
+		reload();
 	}
-	else if (choiceP1==2 && choiceP2==3){
+	else if (choiceP1=='2' && choiceP2=='3'){
 		paper1();
 		scissors2();
 		mvaddstr(4,20,"Player 2 Wins!");
@@ -141,6 +144,7 @@ char choiceP2;
 		scissors1();
 		scissors2();
 		mvaddstr(4,20,"Draw");
+		reload();
 	}
 
 	else{
